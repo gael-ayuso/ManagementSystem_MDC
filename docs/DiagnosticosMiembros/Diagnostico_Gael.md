@@ -1,0 +1,1 @@
+Diagnosticara toda la carpeta de model

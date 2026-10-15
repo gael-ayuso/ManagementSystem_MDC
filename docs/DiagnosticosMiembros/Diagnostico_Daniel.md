@@ -1,0 +1,1 @@
+Diagnosticara todos los controllers de la carpeta de gerente

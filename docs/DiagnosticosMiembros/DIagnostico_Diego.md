@@ -1,0 +1,4 @@
+Encargado de revisar y diagnosticar los archivos:
+LoginController
+ReciboController
+vendedorController
