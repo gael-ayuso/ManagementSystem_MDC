@@ -94,7 +94,7 @@ De acuerdo con la guía de trabajo de la Semana 1, se verificó el estado base d
 * **Técnica propuesta:** **Replace Magic Number with Symbolic Constant** *(Familia 3: Organización de datos)*.
 * **Justificación:** Definir constantes simbólicas (`COL_ID_ORDEN = 0`, `COL_ID_PRODUCTO = 1`, `COL_CANT_ESPERADA = 2`, `COL_CANT_RECIBIDA = 3`, `MIN_COLUMNAS = 4`) hace explícito el esquema del CSV en toda la clase.
 * **Comportamiento que debe conservarse:** `buscarPorIdOrden` y `actualizarRecepcion` deben seguir leyendo y modificando exactamente las mismas columnas de `dataBase/DetallesOrden.csv`.
-* **Prueba prevista:** Misma suite unitaria `DetalleOrdenDaoCsvTest` ejecutada antes y después del cambio.
+* **Prueba prevista:** Prueba unitaria independiente `TestDetalleOrdenConstantesCsv` en JUnit verificando el mapeo de las 4 columnas en `buscarPorIdOrden`, `guardar` y `actualizarRecepcion` antes y después del cambio.
 * **Prioridad:** **Media** — Mejora legibilidad y evita errores de índices en mantenimiento.
 
 ##### Oportunidad 05 (`CRIS-05`)
