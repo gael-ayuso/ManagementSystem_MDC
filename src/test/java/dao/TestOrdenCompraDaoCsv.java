@@ -15,7 +15,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Prueba unitaria exclusiva para la Oportunidad ID 02 (CRIS-02):
+ * Move Method en OrdenCompraDaoCsv (delegación de cargarDetalles y guardarDetalles a DetalleOrdenDaoCsv).
+ */
 public class TestOrdenCompraDaoCsv {
 
     private OrdenCompraDaoCsv ordenDao;
@@ -36,7 +39,6 @@ public class TestOrdenCompraDaoCsv {
 
     @AfterEach
     void tearDown() {
-        // Restaurar estado de los CSV para mantener pruebas limpias e independientes
         if (respaldoOrdenes != null) {
             CsvUtils.escribirArchivo(RUTA_ORDENES, respaldoOrdenes);
         }
@@ -45,14 +47,13 @@ public class TestOrdenCompraDaoCsv {
         }
     }
 
-    // CRIS-02: listarTodos recupera órdenes y carga sus listas de detalles
+    // CRIS-02: listarTodos recupera órdenes y carga sus listas de DetalleOrden asociadas
     @Test
     void testListarTodosYCargarDetalles() {
         List<OrdenCompra> ordenes = ordenDao.listarTodos();
         assertNotNull(ordenes, "La lista de órdenes no debe ser nula");
         assertFalse(ordenes.isEmpty(), "Debe haber órdenes registradas");
 
-        // Buscar la orden 2 que tiene 2 detalles registrados
         OrdenCompra orden2 = null;
         for (OrdenCompra o : ordenes) {
             if (o.getIdOrden() == 2) {
@@ -70,7 +71,6 @@ public class TestOrdenCompraDaoCsv {
         assertNotNull(detalles, "La lista de detalles no debe ser nula");
         assertEquals(2, detalles.size(), "La orden 2 debe tener exactamente 2 detalles cargados");
 
-        // Verificar los dos productos esperados: M002 y M001
         boolean tieneM002 = false;
         boolean tieneM001 = false;
         for (DetalleOrden d : detalles) {
@@ -91,7 +91,7 @@ public class TestOrdenCompraDaoCsv {
 
     // CRIS-02: buscarPorId recupera la orden con sus detalles correspondientes
     @Test
-    void testBuscarPorId() {
+    void testBuscarPorIdCargaDetallesDeLaOrden() {
         OrdenCompra orden = ordenDao.buscarPorId(1);
         assertNotNull(orden, "La orden 1 debe existir");
         assertEquals(1, orden.getIdOrden());
@@ -107,7 +107,7 @@ public class TestOrdenCompraDaoCsv {
         assertNull(noExiste, "Buscar una orden inexistente debe retornar null");
     }
 
-    // CRIS-02: guardar persiste cabecera y detalles en sus respectivos archivos
+    // CRIS-02: guardar persiste cabecera en OrdenesCompra.csv y detalles en DetallesOrden.csv
     @Test
     void testGuardarOrdenYDetalles() {
         int nuevoId = ordenDao.generarSiguienteId();
@@ -123,7 +123,6 @@ public class TestOrdenCompraDaoCsv {
         boolean exito = ordenDao.guardar(nuevaOrden);
         assertTrue(exito, "guardar() debe retornar true");
 
-        // Recuperar y verificar persistencia íntegra
         OrdenCompra recuperada = ordenDao.buscarPorId(nuevoId);
         assertNotNull(recuperada, "La orden guardada debe recuperarse con buscarPorId");
         assertEquals(nuevoId, recuperada.getIdOrden());
@@ -135,12 +134,5 @@ public class TestOrdenCompraDaoCsv {
         assertEquals("M001", recuperada.getDetalles().get(0).getProducto().getIdProducto());
         assertEquals(20, recuperada.getDetalles().get(0).getCantidadEsperada());
         assertEquals(0, recuperada.getDetalles().get(0).getCantidadRecibida());
-    }
-
-    // CRIS-02: generarSiguienteId genera un ID consecutivo válido
-    @Test
-    void testGenerarSiguienteId() {
-        int siguiente = ordenDao.generarSiguienteId();
-        assertTrue(siguiente >= 4, "El siguiente ID debe ser al menos 4");
     }
 }

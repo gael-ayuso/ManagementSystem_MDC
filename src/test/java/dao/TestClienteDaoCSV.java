@@ -2,24 +2,41 @@ package dao;
 
 import gestionmats.dao.ClienteDaoCsv;
 import gestionmats.model.Cliente;
+import gestionmats.utils.CsvUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Prueba unitaria exclusiva para la Oportunidad ID 01 (CRIS-01):
+ * Extract Method en ClienteDaoCsv.listarTodos() (extracción de mapearDeCsv).
+ */
 public class TestClienteDaoCSV {
 
+    private static final String RUTA_CLIENTES = "dataBase/clientes.csv";
+
     private ClienteDaoCsv dao;
+    private List<String> respaldoClientes;
 
     @BeforeEach
     void setUp() {
         dao = new ClienteDaoCsv();
+        respaldoClientes = CsvUtils.leerArchivo(RUTA_CLIENTES);
     }
 
-    // CRIS-01: listarTodos debe retornar clientes válidos y omitir cabecera
+    @AfterEach
+    void tearDown() {
+        if (respaldoClientes != null) {
+            CsvUtils.escribirArchivo(RUTA_CLIENTES, respaldoClientes);
+        }
+    }
+
+    // CRIS-01: listarTodos debe retornar clientes válidos y omitir la cabecera del CSV
     @Test
     void testListarTodosNoVacioYOmitirCabecera() {
         List<Cliente> clientes = dao.listarTodos();
@@ -33,7 +50,7 @@ public class TestClienteDaoCSV {
         }
     }
 
-    // CRIS-01: listarTodos mapea correctamente los 7 atributos de un cliente conocido
+    // CRIS-01: listarTodos mapea correctamente los 7 atributos de una línea CSV completa
     @Test
     void testMapeoAtributosClienteRegistrado() {
         Cliente juan = dao.buscarPorId(1);
@@ -47,26 +64,13 @@ public class TestClienteDaoCSV {
         assertEquals("Herramientas", juan.getPreferencias());
     }
 
-    // CRIS-01: buscarPorId retorna el cliente cuando existe y null cuando no
-    @Test
-    void testBuscarPorId() {
-        Cliente c2 = dao.buscarPorId(2);
-        assertNotNull(c2);
-        assertEquals(2, c2.getIdCliente());
-        assertEquals("Ana Lopez", c2.getNombre());
-
-        Cliente noExiste = dao.buscarPorId(-9999);
-        assertNull(noExiste, "Buscar un ID inexistente debe retornar null");
-    }
-
-    // CRIS-01: listarTodos asigna valores por defecto a campos vacíos (Cliente 0)
+    // CRIS-01: listarTodos asigna valores por defecto cuando una línea tiene campos vacíos
     @Test
     void testClienteConCamposVaciosAplicaValoresPorDefecto() {
         Cliente c0 = dao.buscarPorId(0);
         assertNotNull(c0, "El cliente genérico con ID 0 debe existir");
         assertEquals(0, c0.getIdCliente());
         assertEquals("Cliente Sin Registrar", c0.getNombre());
-        // Columnas vacías mapeadas a cadenas vacías o 0.0 según getDato
         assertEquals("", c0.getCorreoElectronico());
         assertEquals("", c0.getNumeroTelefonico());
         assertEquals("", c0.getDireccion());
@@ -74,10 +78,17 @@ public class TestClienteDaoCSV {
         assertEquals("Venta Rápida", c0.getPreferencias());
     }
 
-    // CRIS-01: obtenerUltimoId devuelve el mayor ID numérico de clientes
+    // CRIS-01: listarTodos descarta líneas corruptas (ID o puntos no numéricos) y conserva los clientes válidos
     @Test
-    void testObtenerUltimoId() {
-        int ultimoId = dao.obtenerUltimoId();
-        assertTrue(ultimoId >= 3, "El último ID debe ser al menos 3");
+    void testLineaCorruptaEsIgnoradaSinDetenerLectura() {
+        int totalValidosAntes = dao.listarTodos().size();
+
+        List<String> lineasConCorrupta = new ArrayList<>(respaldoClientes);
+        lineasConCorrupta.add("ID_INVALIDO,Cliente Malformado,correo@mail.com,555-0000,Calle X,PUNTOS_INVALIDOS,Pref");
+        CsvUtils.escribirArchivo(RUTA_CLIENTES, lineasConCorrupta);
+
+        List<Cliente> clientesDespues = dao.listarTodos();
+        assertEquals(totalValidosAntes, clientesDespues.size(),
+                "La línea corrupta debe ser ignorada y retornar exactamente los mismos clientes válidos");
     }
 }

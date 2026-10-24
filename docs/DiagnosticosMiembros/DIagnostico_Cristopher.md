@@ -87,7 +87,7 @@ Nota: Tener en cuenta la oportunidad que provocará un Cambio de cliente (Remove
 | **Técnica propuesta** | **Replace Magic Number with Symbolic Constant** *(Familia 3: Organización de datos)* |
 | **Justificación** | Definir constantes simbólicas privadas en la clase (`COL_ID_ORDEN = 0`, `COL_ID_PRODUCTO = 1`, `COL_CANT_ESPERADA = 2`, `COL_CANT_RECIBIDA = 3`, `MIN_COLUMNAS = 4`) comunica explícitamente el significado de cada posición del registro CSV tanto en `buscarPorIdOrden` como en `actualizarRecepcion`, evitando errores al leer o dar mantenimiento a ambos métodos. |
 | **Comportamiento que debe conservarse** | `buscarPorIdOrden` y `actualizarRecepcion` deben seguir leyendo y modificando exactamente las mismas columnas del archivo `dataBase/DetallesOrden.csv` y produciendo los mismos objetos `DetalleOrden` y actualizaciones en disco. |
-| **Prueba prevista** | Reutilizar y ejecutar las pruebas unitarias de `DetalleOrdenDaoCsvTest` (`buscarPorIdOrden` y `actualizarRecepcion`) verificando que las lecturas y actualizaciones de `cantidadEsperada` y `cantidadRecibida` conserven el resultado esperado antes y después del cambio. |
+| **Prueba prevista** | Construir prueba unitaria independiente en JUnit (`TestDetalleOrdenConstantesCsv`) verificando que las lecturas en `buscarPorIdOrden` y las actualizaciones en `actualizarRecepcion` mapeen correctamente las columnas `idOrden` (0), `idProducto` (1), `cantidadEsperada` (2) y `cantidadRecibida` (3) antes y después del cambio. |
 | **Prioridad** | **Media** — Mejora la legibilidad y mantenibilidad en una clase donde los mismos índices numéricos se usan en múltiples métodos. |
 
 ---
