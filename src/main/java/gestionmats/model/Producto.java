@@ -1,5 +1,7 @@
 package gestionmats.model;
 
+import java.math.RoundingMode;
+
 public class Producto {
     private String idProducto; // Cambiado a String como propusiste
     private String nombre;
@@ -10,6 +12,9 @@ public class Producto {
     private int stockActual;
     private String unidadMedida;
     private double descuento;
+
+    private static final double PORCENTAJE_STOCK_MINIMO = 0.25;
+    private static final double PORCENTAJE_STOCK_CRITICO = 0.10;
 
     public String getIdProducto() {
         return idProducto;
@@ -99,8 +104,8 @@ public class Producto {
      * Java lo evalúa instantáneamente cada vez que la tabla lo pide.
      */
     public EstadoProducto getEstado() {
-        int minimo = calcularStockMinimo();
-        int nivelCritico = (int) (this.stockMaximo * 0.10);
+        int minimo = (int) (this.getStockMaximo() * PORCENTAJE_STOCK_MINIMO);
+        int nivelCritico = (int) (this.getStockMaximo() * PORCENTAJE_STOCK_CRITICO);
 
         if (this.stockActual == stockMaximo) {
             return EstadoProducto.LLENO;

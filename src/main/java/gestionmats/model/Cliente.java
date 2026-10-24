@@ -52,9 +52,13 @@ public class Cliente {
      * @return descuento en pesos MXN equivalente a los puntos acumulados
      */
     public double aplicarPuntosComoDescuento() {
-        double descuento   = this.puntosLealtad * VALOR_PUNTO;
+        double descuento = this.calcularDescuentoPuntos();
         this.puntosLealtad = 0.0;
         return descuento;
+    }
+
+    public double calcularDescuentoPuntos() {
+        return this.getPuntosLealtad() * VALOR_PUNTO;
     }
 
     // ── Getters y Setters ──────────────────────────────────

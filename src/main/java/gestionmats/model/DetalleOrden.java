@@ -26,10 +26,11 @@ public class DetalleOrden {
 
     // Método de negocio (Estaba en tu UML)
     public double calcularSubtotal() {
+        Producto producto = this.getProducto();
         if (producto != null) {
             // Asumimos que el proveedor nos vende a un costo, pero usaremos el precioVenta 
             // temporalmente o puedes agregar 'costoProveedor' a Producto después.
-            return producto.getPrecioVenta() * cantidadEsperada;
+            return producto.getPrecioVenta() * this.getCantidadEsperada();
         }
         return 0.0;
     }
