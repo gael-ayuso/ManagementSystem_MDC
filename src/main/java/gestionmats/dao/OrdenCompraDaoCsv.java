@@ -1,17 +1,15 @@
 package gestionmats.dao;
 
 import gestionmats.model.*;
-import gestionmats.utils.CsvUtils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class OrdenCompraDaoCsv extends AbstractDaoCsv<OrdenCompra> {
 
     private ProveedorDaoCsv proveedorDao = new ProveedorDaoCsv();
-    private ProductoDaoCsv productoDao = new ProductoDaoCsv();
+    // REFACTOR [ID 02 / CRIS-02 - Move Method]: Se reemplaza el acceso directo a DetallesOrden.csv y ProductoDaoCsv por DetalleOrdenDaoCsv
+    private DetalleOrdenDaoCsv detalleOrdenDao = new DetalleOrdenDaoCsv();
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    private String rutaDetalles = "dataBase/DetallesOrden.csv";
 
     public OrdenCompraDaoCsv() {
         super("dataBase/OrdenesCompra.csv");
@@ -64,24 +62,23 @@ public class OrdenCompraDaoCsv extends AbstractDaoCsv<OrdenCompra> {
         return guardado;
     }
 
+    /**
+     * REFACTOR [ID 02 / CRIS-02 - Move Method]:
+     * Se delega la lectura y mapeo de los detalles a DetalleOrdenDaoCsv.buscarPorIdOrden().
+     */
     private void cargarDetalles(OrdenCompra orden) {
-        List<String> lineas = CsvUtils.leerArchivo(rutaDetalles);
-        for (int i = 1; i < lineas.size(); i++) { // saltamos el encabezado
-            String[] datos = lineas.get(i).split(",");
-            if (datos.length >= 4 && Integer.parseInt(datos[0]) == orden.getIdOrden()) {
-                Producto p = productoDao.buscarPorId(datos[1]);
-                int cantEsp = Integer.parseInt(datos[2]);
-                int cantRec = Integer.parseInt(datos[3]);
-                orden.addDetalleOrden(new DetalleOrden(p, cantEsp, cantRec));
-            }
+        for (DetalleOrden det : detalleOrdenDao.buscarPorIdOrden(orden.getIdOrden())) {
+            orden.addDetalleOrden(det);
         }
     }
 
+    /**
+     * REFACTOR [ID 02 / CRIS-02 - Move Method]:
+     * Se delega la persistencia de cada detalle a DetalleOrdenDaoCsv.guardar().
+     */
     private void guardarDetalles(OrdenCompra orden) {
         for (DetalleOrden det : orden.getDetalles()) {
-            String linea = orden.getIdOrden() + "," + det.getProducto().getIdProducto() + "," +
-                    det.getCantidadEsperada() + "," + det.getCantidadRecibida();
-            CsvUtils.agregarLinea(rutaDetalles, linea.split(","));
+            detalleOrdenDao.guardar(orden.getIdOrden(), det);
         }
     }
 
