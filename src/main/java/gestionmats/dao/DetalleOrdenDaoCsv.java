@@ -12,6 +12,14 @@ import java.util.List;
 
 public class DetalleOrdenDaoCsv {
 
+    // REFACTOR [ID 04 / CRIS-04 - Replace Magic Number with Symbolic Constant]:
+    // Constantes simbólicas para los índices de columna y longitud mínima en DetallesOrden.csv
+    private static final int COL_ID_ORDEN = 0;
+    private static final int COL_ID_PRODUCTO = 1;
+    private static final int COL_CANT_ESPERADA = 2;
+    private static final int COL_CANT_RECIBIDA = 3;
+    private static final int MIN_COLUMNAS = 4;
+
     private final String ruta = "dataBase/DetallesOrden.csv";
     private ProductoDaoCsv productoDao = new ProductoDaoCsv();
 
@@ -30,13 +38,14 @@ public class DetalleOrdenDaoCsv {
 
             String[] datos = linea.split(",", -1);
             try {
-                int idOrdenCsv = Integer.parseInt(datos[0].trim());
+                // REFACTOR [ID 04 / CRIS-04 - Replace Magic Number with Symbolic Constant]
+                int idOrdenCsv = Integer.parseInt(datos[COL_ID_ORDEN].trim());
 
                 // Filtramos solo los que pertenecen a la orden que estamos buscando
                 if (idOrdenCsv == idOrden) {
-                    String idProd = datos[1].trim();
-                    int esperada = Integer.parseInt(datos[2].trim());
-                    int recibida = Integer.parseInt(datos[3].trim());
+                    String idProd = datos[COL_ID_PRODUCTO].trim();
+                    int esperada = Integer.parseInt(datos[COL_CANT_ESPERADA].trim());
+                    int recibida = Integer.parseInt(datos[COL_CANT_RECIBIDA].trim());
 
                     Producto p = productoDao.buscarPorId(idProd);
                     if (p != null) {
@@ -71,18 +80,20 @@ public class DetalleOrdenDaoCsv {
      * REFACTOR [ID 03 / CRIS-03 - Remove Control Flag]:
      * Se elimina la bandera booleana 'modificado' y el 'break', retornando directamente
      * el resultado de guardar el archivo en cuanto se encuentra y actualiza la fila buscada.
+     * REFACTOR [ID 04 / CRIS-04 - Replace Magic Number with Symbolic Constant]:
+     * Se utilizan constantes simbólicas para el mínimo de columnas y los índices del CSV.
      */
     public boolean actualizarRecepcion(int idOrden, String idProducto, int nuevaCantidadRecibida) {
         List<String> lineas = CsvUtils.leerArchivo(ruta);
 
         for (int i = 0; i < lineas.size(); i++) {
             String[] datos = lineas.get(i).split(",", -1);
-            if (datos.length >= 4) {
+            if (datos.length >= MIN_COLUMNAS) {
                 // Buscamos la fila que coincida con la Orden Y el Producto
-                if (datos[0].trim().equals(String.valueOf(idOrden)) &&
-                        datos[1].trim().equals(idProducto)) {
+                if (datos[COL_ID_ORDEN].trim().equals(String.valueOf(idOrden)) &&
+                        datos[COL_ID_PRODUCTO].trim().equals(idProducto)) {
 
-                    datos[3] = String.valueOf(nuevaCantidadRecibida);
+                    datos[COL_CANT_RECIBIDA] = String.valueOf(nuevaCantidadRecibida);
                     lineas.set(i, String.join(",", datos));
                     return guardarLineasEnArchivo(lineas);
                 }
