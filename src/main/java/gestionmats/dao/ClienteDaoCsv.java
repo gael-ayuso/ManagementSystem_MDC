@@ -37,22 +37,10 @@ public class ClienteDaoCsv implements Dao<Cliente> {
             if (i == 0 && linea.toLowerCase().startsWith("id")) continue;
             if (linea == null || linea.trim().isEmpty()) continue;
 
-            // FIX: El "-1" obliga a Java a contar los espacios vacíos al final de la línea
-            String[] datos = linea.split(",", -1);
-            try {
-                Cliente c = new Cliente();
-                // FIX: Usamos el method seguro getDato para evitar excepciones de índice
-                c.setIdCliente(Integer.parseInt(getDato(datos, 0, "0")));
-                c.setNombre(getDato(datos, 1, "Desconocido"));
-                c.setCorreoElectronico(getDato(datos, 2, ""));
-                c.setNumeroTelefonico(getDato(datos, 3, ""));
-                c.setDireccion(getDato(datos, 4, ""));
-                c.setPuntosLealtad(Double.parseDouble(getDato(datos, 5, "0.0")));
-                c.setPreferencias(getDato(datos, 6, ""));
-
+            // REFACTOR [ID 01 / CRIS-01 - Extract Method]: Se delega el parseo de la línea CSV a mapearDeCsv()
+            Cliente c = mapearDeCsv(linea);
+            if (c != null) {
                 clientes.add(c);
-            } catch (Exception e) {
-                System.err.println("Error al parsear cliente: " + linea);
             }
         }
         return clientes;
@@ -69,6 +57,32 @@ public class ClienteDaoCsv implements Dao<Cliente> {
     @Override
     public boolean eliminar(int id) {
         return CsvUtils.eliminarLinea(ruta, String.valueOf(id));
+    }
+
+    /**
+     * REFACTOR [ID 01 / CRIS-01 - Extract Method]:
+     * Método extraído de listarTodos() para separar la responsabilidad de convertir
+     * una línea de texto CSV en una instancia de Cliente.
+     */
+    private Cliente mapearDeCsv(String linea) {
+        // FIX: El "-1" obliga a Java a contar los espacios vacíos al final de la línea
+        String[] datos = linea.split(",", -1);
+        try {
+            Cliente c = new Cliente();
+            // FIX: Usamos el method seguro getDato para evitar excepciones de índice
+            c.setIdCliente(Integer.parseInt(getDato(datos, 0, "0")));
+            c.setNombre(getDato(datos, 1, "Desconocido"));
+            c.setCorreoElectronico(getDato(datos, 2, ""));
+            c.setNumeroTelefonico(getDato(datos, 3, ""));
+            c.setDireccion(getDato(datos, 4, ""));
+            c.setPuntosLealtad(Double.parseDouble(getDato(datos, 5, "0.0")));
+            c.setPreferencias(getDato(datos, 6, ""));
+
+            return c;
+        } catch (Exception e) {
+            System.err.println("Error al parsear cliente: " + linea);
+            return null;
+        }
     }
 
     private String mapearACsv(Cliente c) {
