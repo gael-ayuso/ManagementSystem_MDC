@@ -725,8 +725,7 @@ public class VendedorController implements Initializable {
         if (clienteActual != null && clienteActual.getIdCliente() > 0) {
             double puntosUsados = puntosUsadosEnEstaVenta;
             double puntosGanados = total * 0.05;
-            double puntosFinales = clienteActual.getPuntosLealtad() - puntosUsados + puntosGanados;
-            if (puntosFinales < 0) puntosFinales = 0;
+            double puntosFinales = calcularPuntosFinales(clienteActual.getPuntosLealtad(), puntosUsados, total);
 
             clienteActual.setPuntosLealtad(puntosFinales);
             clienteDao.actualizar(clienteActual);
@@ -735,6 +734,13 @@ public class VendedorController implements Initializable {
                     " usó " + String.format("%.0f", puntosUsados) + " puntos, ganó " + String.format("%.0f", puntosGanados) +
                     " puntos. Saldo actual: " + String.format("%.0f", puntosFinales) + " puntos", "success");
         }
+    }
+
+    // Extract Method: regla de puntos de lealtad sin dependencias de UI ni DAO.
+    // Es public static para que TestVendedorVenta pueda probarla directamente.
+    public static double calcularPuntosFinales(double puntosActuales, double puntosUsados, double total) {
+        double puntosFinales = puntosActuales - puntosUsados + total * 0.05;
+        return puntosFinales < 0 ? 0 : puntosFinales;
     }
 
     // Extract Method: limpia el estado de la venta y refresca la pantalla.

@@ -1,5 +1,6 @@
 package controllers;
 
+import gestionmats.controllers.VendedorController;
 import gestionmats.model.Cliente;
 import gestionmats.model.Venta;
 import org.junit.jupiter.api.Test;
@@ -14,22 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TestVendedorVenta {
 
-    /**
-     * Fórmula exacta implementada en VendedorController (líneas 691-694):
-     * double puntosUsados = puntosUsadosEnEstaVenta;
-     * double puntosGanados = total * 0.05;
-     * double puntosFinales = clienteActual.getPuntosLealtad() - puntosUsados + puntosGanados;
-     * if (puntosFinales < 0) puntosFinales = 0;
-     */
-    public static double calcularPuntosFinales(double puntosActuales, double puntosUsados, double totalVenta) {
-        double puntosGanados = totalVenta * 0.05;
-        double puntosFinales = puntosActuales - puntosUsados + puntosGanados;
-        if (puntosFinales < 0) {
-            puntosFinales = 0;
-        }
-        return puntosFinales;
-    }
-
     // DG-01: cálculo de puntos ganados sin canje (100 puntos iniciales + 1000 * 0.05 = 150)
     @Test
     void testCalcularPuntosSinCanje() {
@@ -37,7 +22,7 @@ public class TestVendedorVenta {
         double puntosUsados = 0.0;
         double totalVenta = 1000.0;
 
-        double resultado = calcularPuntosFinales(puntosActuales, puntosUsados, totalVenta);
+        double resultado = VendedorController.calcularPuntosFinales(puntosActuales, puntosUsados, totalVenta);
         assertEquals(150.0, resultado, 0.001);
     }
 
@@ -48,7 +33,7 @@ public class TestVendedorVenta {
         double puntosUsados = 150.0;
         double totalVenta = 800.0; // 800 * 0.05 = 40 puntos ganados
 
-        double resultado = calcularPuntosFinales(puntosActuales, puntosUsados, totalVenta);
+        double resultado = VendedorController.calcularPuntosFinales(puntosActuales, puntosUsados, totalVenta);
         assertEquals(90.0, resultado, 0.001);
     }
 
@@ -60,7 +45,7 @@ public class TestVendedorVenta {
         double totalVenta = 100.0; // 100 * 0.05 = 5 puntos ganados
         // 20 - 50 + 5 = -25 -> debe fijarse en 0.0
 
-        double resultado = calcularPuntosFinales(puntosActuales, puntosUsados, totalVenta);
+        double resultado = VendedorController.calcularPuntosFinales(puntosActuales, puntosUsados, totalVenta);
         assertEquals(0.0, resultado, 0.001, "Los puntos no pueden ser negativos");
     }
 
@@ -68,7 +53,7 @@ public class TestVendedorVenta {
     @Test
     void testActualizacionPuntosEnCliente() {
         Cliente cliente = new Cliente(1, "Juan Perez", "juan@mail.com", "555-1234", "Dir", 120.0, "Pref");
-        double nuevoSaldo = calcularPuntosFinales(cliente.getPuntosLealtad(), 40.0, 500.0);
+        double nuevoSaldo = VendedorController.calcularPuntosFinales(cliente.getPuntosLealtad(), 40.0, 500.0);
         // 120 - 40 + 25 = 105
         cliente.setPuntosLealtad(nuevoSaldo);
 

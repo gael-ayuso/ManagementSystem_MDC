@@ -3,7 +3,6 @@ package controllers;
 import gestionmats.model.RolUsuario;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Method;
 import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,47 +50,13 @@ public class TestRolUsuario {
     @Test
     void testMapeoVistasYTitulosPorRol() {
         // Validación del contrato de interfaz esperado para cada rol
-        assertEquals(VISTA_GERENTE, obtenerVista(RolUsuario.GERENTE));
-        assertEquals(TITULO_GERENTE, obtenerTitulo(RolUsuario.GERENTE));
+        assertEquals(VISTA_GERENTE, RolUsuario.GERENTE.getVista());
+        assertEquals(TITULO_GERENTE, RolUsuario.GERENTE.getTitulo());
 
-        assertEquals(VISTA_VENDEDOR, obtenerVista(RolUsuario.VENDEDOR));
-        assertEquals(TITULO_VENDEDOR, obtenerTitulo(RolUsuario.VENDEDOR));
+        assertEquals(VISTA_VENDEDOR, RolUsuario.VENDEDOR.getVista());
+        assertEquals(TITULO_VENDEDOR, RolUsuario.VENDEDOR.getTitulo());
 
-        assertEquals(VISTA_ALMACENISTA, obtenerVista(RolUsuario.ALMACENISTA));
-        assertEquals(TITULO_ALMACENISTA, obtenerTitulo(RolUsuario.ALMACENISTA));
-    }
-
-    /**
-     * Helper que consulta getVista() mediante reflexión si ya fue añadido a RolUsuario,
-     * o devuelve el valor del switch pre-refactorización si aún no se ha modificado el enum.
-     */
-    private String obtenerVista(RolUsuario rol) {
-        try {
-            Method m = RolUsuario.class.getMethod("getVista");
-            return (String) m.invoke(rol);
-        } catch (Exception e) {
-            return switch (rol) {
-                case GERENTE -> VISTA_GERENTE;
-                case VENDEDOR -> VISTA_VENDEDOR;
-                case ALMACENISTA -> VISTA_ALMACENISTA;
-            };
-        }
-    }
-
-    /**
-     * Helper que consulta getTitulo() mediante reflexión si ya fue añadido a RolUsuario,
-     * o devuelve el valor del switch pre-refactorización si aún no se ha modificado el enum.
-     */
-    private String obtenerTitulo(RolUsuario rol) {
-        try {
-            Method m = RolUsuario.class.getMethod("getTitulo");
-            return (String) m.invoke(rol);
-        } catch (Exception e) {
-            return switch (rol) {
-                case GERENTE -> TITULO_GERENTE;
-                case VENDEDOR -> TITULO_VENDEDOR;
-                case ALMACENISTA -> TITULO_ALMACENISTA;
-            };
-        }
+        assertEquals(VISTA_ALMACENISTA, RolUsuario.ALMACENISTA.getVista());
+        assertEquals(TITULO_ALMACENISTA, RolUsuario.ALMACENISTA.getTitulo());
     }
 }
