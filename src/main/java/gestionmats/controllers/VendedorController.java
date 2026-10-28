@@ -44,7 +44,6 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class VendedorController implements Initializable {
-
     @FXML private Label lblPageTitle;
     @FXML private Label lblPageSub;
     @FXML private Label lblFecha;
@@ -81,15 +80,21 @@ public class VendedorController implements Initializable {
     @FXML private Label lblTotal;
     @FXML private ComboBox<String> cmbMetodoPago;
     @FXML private ComboBox<String> cmbTipoVenta;
+
     @FXML private Button btnAgregarCarrito;
     @FXML private Button btnEliminarDelCarrito;
     @FXML private Button btnAplicarDescuento;
     @FXML private Button btnFinalizarVenta;
+    @FXML private Button btnSeleccionarCliente;
+    @FXML private Button btnLimpiarCliente;
+    @FXML private Button btnNuevoCliente;
+    @FXML private Button btnEditarCliente;
+    @FXML private Button btnEliminarCliente;
+    @FXML private Button btnVerDetalleVenta;
 
     @FXML private Label lblClienteSeleccionado;
     @FXML private Label lblPuntosCliente;
-    @FXML private Button btnSeleccionarCliente;
-    @FXML private Button btnLimpiarCliente;
+
     @FXML private Button btnCanjearPuntos;
 
     @FXML private TextField txtBuscarVenta;
@@ -102,7 +107,6 @@ public class VendedorController implements Initializable {
     @FXML private TableColumn<Venta, Double> colHisTotal;
     @FXML private TableColumn<Venta, String> colHisEstado;
     @FXML private TableColumn<Venta, String> colHisCliente;
-    @FXML private Button btnVerDetalleVenta;
     @FXML private Label lblFooterHistorial;
 
     @FXML private TextField txtBuscarCliente;
@@ -114,9 +118,6 @@ public class VendedorController implements Initializable {
     @FXML private TableColumn<Cliente, String> colCliDireccion;
     @FXML private TableColumn<Cliente, Double> colCliPuntos;
     @FXML private TableColumn<Cliente, String> colCliPreferencias;
-    @FXML private Button btnNuevoCliente;
-    @FXML private Button btnEditarCliente;
-    @FXML private Button btnEliminarCliente;
     @FXML private Label lblFooterClientes;
 
     private ProductoDaoCsv productoDao;
@@ -149,7 +150,6 @@ public class VendedorController implements Initializable {
 
         estrategiaDescuento = new DescuentoCompuesto();
         estrategiaPago = null;
-
         setupClock();
         setupVendedorInfo();
         setupTablaProductos();
@@ -162,7 +162,6 @@ public class VendedorController implements Initializable {
         cargarClientes();
         setupSearchFilter();
         actualizarInfoCliente();
-
         activeNavBtn = navVentas;
         mostrarVista(viewVentas, navVentas, "Punto de Venta", "Registro de ventas y pedidos");
         viewHistorial.setVisible(false);
@@ -191,6 +190,7 @@ public class VendedorController implements Initializable {
             lblVendedorNombre.setText(usuario.getNombre() + " " + usuario.getPrimerApellido());
         }
     }
+
 
     private void mostrarVista(VBox vistaActiva, Button navActivo, String titulo, String subtitulo) {
         if (activeNavBtn != null) activeNavBtn.getStyleClass().remove("nav-btn-active");
@@ -270,6 +270,7 @@ public class VendedorController implements Initializable {
         colPrecioCarrito.setCellValueFactory(new PropertyValueFactory<>("precioUnitario"));
         colSubtotalCarrito.setCellValueFactory(new PropertyValueFactory<>("subtotal"));
         colTotalCarrito.setCellValueFactory(new PropertyValueFactory<>("total"));
+
         for (TableColumn<DetalleVenta, Double> col : List.of(colPrecioCarrito, colSubtotalCarrito, colTotalCarrito)) {
             col.setCellFactory(c -> new TableCell<>() {
                 @Override
@@ -321,9 +322,9 @@ public class VendedorController implements Initializable {
                 }
                 for (DetalleVenta item : carrito) {
                     if (item.getIdProducto().equals(sel.getIdProducto())) {
-                        item.setCantidad(item.getCantidad() + cantidad);
-                        item.setSubtotal(item.getPrecioUnitario() * item.getCantidad());
-                        item.setTotal(item.getSubtotal() * (1 - item.getDescuentoAplicado() / 100));
+                        // REFACTOR (ID 20 / DG-05): Move Method -> el recálculo de cantidad,
+                        // subtotal y total ahora vive en DetalleVenta.agregarCantidad(int).
+                        item.agregarCantidad(cantidad);
                         tableCarrito.refresh();
                         actualizarTotales();
                         UIComponents.showNotification("Cantidad actualizada", "success");
@@ -505,14 +506,12 @@ public class VendedorController implements Initializable {
         double puntosDisponibles = clienteActual.getPuntosLealtad();
         double subtotal = carrito.stream().mapToDouble(DetalleVenta::getSubtotal).sum();
 
-        // Calcular el descuento manual actual (sin contar puntos)
         double descuentoManualActual = 0;
         if (estrategiaDescuento.tieneDescuentoManual()) {
             descuentoManualActual = new DescuentoPorPromocion(estrategiaDescuento.getPorcentajeTotal(), "").calcularDescuento(subtotal);
         }
         double maxDescuentoEnPesos = subtotal - descuentoManualActual;
 
-        // Mostrar puntos disponibles como entero (solo para mostrar)
         int puntosMostrar = (int) Math.floor(puntosDisponibles);
 
         TextInputDialog dialog = new TextInputDialog("0");
@@ -569,6 +568,9 @@ public class VendedorController implements Initializable {
         }
     }
 
+
+    //Parte donde se va a refactorizar se le va a aplicar ExtractMethod
+    //Como se refactorizara: pedirPago, confirmarVenta, crearVenta, crearGenerador, guardarVenta, actualizarPuntosCliente, reiniciarVenta
     @FXML
     private void handleFinalizarVenta() {
         if (carrito.isEmpty()) {
@@ -579,6 +581,25 @@ public class VendedorController implements Initializable {
         double total = Double.parseDouble(lblTotal.getText().replace("$ ", ""));
         String metodoPago = cmbMetodoPago.getValue();
 
+        if (!pedirPago(total, metodoPago)) return;
+        if (!confirmarVenta(total)) return;
+
+        Venta venta = crearVenta(total, metodoPago);
+
+        GeneradorRecibo generador = crearGenerador(venta);
+        String recibo = generador.generarRecibo();
+        mostrarRecibo(recibo);
+
+        int nuevoIdVenta = guardarVenta(venta);
+        if (nuevoIdVenta < 0) return;
+
+        actualizarPuntosCliente(total);
+        reiniciarVenta(nuevoIdVenta);
+    }
+
+    // Extract Method: solicita y procesa el pago según el método seleccionado.
+    // Devuelve false si el usuario cancela, el dato es inválido o el pago no se procesa.
+    private boolean pedirPago(double total, String metodoPago) {
         switch (metodoPago) {
             case "EFECTIVO":
                 TextInputDialog efectivoDialog = new TextInputDialog();
@@ -586,18 +607,18 @@ public class VendedorController implements Initializable {
                 efectivoDialog.setHeaderText("Ingrese el monto recibido");
                 efectivoDialog.setContentText("Monto recibido:");
                 Optional<String> montoRecibido = efectivoDialog.showAndWait();
-                if (montoRecibido.isEmpty()) return;
+                if (montoRecibido.isEmpty()) return false;
                 try {
                     double recibido = Double.parseDouble(montoRecibido.get().trim());
                     if (recibido < total) {
                         UIComponents.showNotification("Monto insuficiente", "error");
-                        return;
+                        return false;
                     }
                     estrategiaPago = new PagoEfectivo(recibido);
-                    if (!estrategiaPago.procesarPago(total)) return;
+                    if (!estrategiaPago.procesarPago(total)) return false;
                 } catch (NumberFormatException e) {
                     UIComponents.showNotification("Monto invalido", "error");
-                    return;
+                    return false;
                 }
                 break;
             case "DEBITO":
@@ -606,18 +627,18 @@ public class VendedorController implements Initializable {
                 debitoDialog.setHeaderText("Ingrese el saldo disponible");
                 debitoDialog.setContentText("Saldo disponible:");
                 Optional<String> saldo = debitoDialog.showAndWait();
-                if (saldo.isEmpty()) return;
+                if (saldo.isEmpty()) return false;
                 try {
                     double saldoDisponible = Double.parseDouble(saldo.get().trim());
                     if (saldoDisponible < total) {
                         UIComponents.showNotification("Saldo insuficiente", "error");
-                        return;
+                        return false;
                     }
                     estrategiaPago = new PagoTarjetaDebito(saldoDisponible);
-                    if (!estrategiaPago.procesarPago(total)) return;
+                    if (!estrategiaPago.procesarPago(total)) return false;
                 } catch (NumberFormatException e) {
                     UIComponents.showNotification("Saldo invalido", "error");
-                    return;
+                    return false;
                 }
                 break;
             case "CREDITO":
@@ -626,20 +647,25 @@ public class VendedorController implements Initializable {
                 creditoDialog.setHeaderText("Ingrese el numero de tarjeta");
                 creditoDialog.setContentText("Numero de tarjeta:");
                 Optional<String> numeroTarjeta = creditoDialog.showAndWait();
-                if (numeroTarjeta.isEmpty()) return;
+                if (numeroTarjeta.isEmpty()) return false;
                 estrategiaPago = new PagoTarjetaCredito(numeroTarjeta.get());
-                if (!estrategiaPago.procesarPago(total)) return;
+                if (!estrategiaPago.procesarPago(total)) return false;
                 break;
             default:
                 UIComponents.showNotification("Seleccione un metodo de pago", "warn");
-                return;
+                return false;
         }
+        return true;
+    }
 
+    // Extract Method: muestra el diálogo de confirmación con el cliente y el total.
+    private boolean confirmarVenta(double total) {
         String msgCliente = clienteActual != null ? "Cliente: " + clienteActual.getNombre() : "Venta general (sin cliente)";
-        if (!UIComponents.showConfirmDialog("Confirmar venta", msgCliente + "\nTotal: $" + total + "\nDesea finalizar la venta?")) {
-            return;
-        }
+        return UIComponents.showConfirmDialog("Confirmar venta", msgCliente + "\nTotal: $" + total + "\nDesea finalizar la venta?");
+    }
 
+    // Extract Method: construye el objeto Venta con los datos actuales de la pantalla.
+    private Venta crearVenta(double total, String metodoPago) {
         var usuario = GestorSesion.getInstancia().getUsuarioActual();
         int idVendedor = usuario != null ? usuario.getIdUsuario() : 1;
         double subtotal = carrito.stream().mapToDouble(DetalleVenta::getSubtotal).sum();
@@ -656,22 +682,28 @@ public class VendedorController implements Initializable {
         venta.setDetalles(new java.util.ArrayList<>(carrito));
         venta.setEstrategiaPago(estrategiaPago);
         venta.setEstrategiaDescuento(estrategiaDescuento);
+        return venta;
+    }
 
+    // Extract Method: elige el generador de recibo según el tipo de venta.
+    private GeneradorRecibo crearGenerador(Venta venta) {
         GeneradorRecibo generador;
         if ("INSTANTANEA".equals(cmbTipoVenta.getValue())) {
             generador = new GeneradorReciboInstantaneo(venta);
         } else {
             generador = new GeneradorReciboPedido(venta, 1000, "15 dias habiles");
         }
+        return generador;
+    }
 
-        String recibo = generador.generarRecibo();
-        mostrarRecibo(recibo);
-
+    // Extract Method: persiste la venta, sus detalles y descuenta el stock.
+    // Devuelve el id de la venta guardada, o -1 si ocurrió un error al guardar.
+    private int guardarVenta(Venta venta) {
         int nuevoIdVenta = ventaDao.obtenerUltimoId() + 1;
         venta.setIdVenta(nuevoIdVenta);
         if (!ventaDao.guardar(venta)) {
             UIComponents.showNotification("Error al guardar la venta", "error");
-            return;
+            return -1;
         }
 
         int nuevoIdDetalle = detalleDao.obtenerUltimoId() + 1;
@@ -685,8 +717,11 @@ public class VendedorController implements Initializable {
                 productoDao.actualizar(p);
             }
         }
+        return nuevoIdVenta;
+    }
 
-        // ==================== ACTUALIZACIÓN DE PUNTOS CORREGIDA ====================
+    // Extract Method: actualiza los puntos de lealtad del cliente (usados y ganados).
+    private void actualizarPuntosCliente(double total) {
         if (clienteActual != null && clienteActual.getIdCliente() > 0) {
             double puntosUsados = puntosUsadosEnEstaVenta;
             double puntosGanados = total * 0.05;
@@ -700,7 +735,10 @@ public class VendedorController implements Initializable {
                     " usó " + String.format("%.0f", puntosUsados) + " puntos, ganó " + String.format("%.0f", puntosGanados) +
                     " puntos. Saldo actual: " + String.format("%.0f", puntosFinales) + " puntos", "success");
         }
+    }
 
+    // Extract Method: limpia el estado de la venta y refresca la pantalla.
+    private void reiniciarVenta(int nuevoIdVenta) {
         carrito.clear();
         estrategiaDescuento.limpiar();
         estrategiaPago = null;

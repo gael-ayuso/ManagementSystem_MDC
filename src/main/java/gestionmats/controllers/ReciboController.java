@@ -13,6 +13,7 @@ public class ReciboController {
     }
 
     @FXML
+
     private void handleCerrar() {
         Stage stage = (Stage) txtRecibo.getScene().getWindow();
         stage.close();
