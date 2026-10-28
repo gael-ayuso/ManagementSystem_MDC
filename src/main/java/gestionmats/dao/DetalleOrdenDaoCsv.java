@@ -68,10 +68,12 @@ public class DetalleOrdenDaoCsv {
     /**
      * Méethod VITAL para el Almacenista.
      * Actualiza la "cantidadRecibida" de un producto específico en la orden.
+     * REFACTOR [ID 03 / CRIS-03 - Remove Control Flag]:
+     * Se elimina la bandera booleana 'modificado' y el 'break', retornando directamente
+     * el resultado de guardar el archivo en cuanto se encuentra y actualiza la fila buscada.
      */
     public boolean actualizarRecepcion(int idOrden, String idProducto, int nuevaCantidadRecibida) {
         List<String> lineas = CsvUtils.leerArchivo(ruta);
-        boolean modificado = false;
 
         for (int i = 0; i < lineas.size(); i++) {
             String[] datos = lineas.get(i).split(",", -1);
@@ -82,26 +84,24 @@ public class DetalleOrdenDaoCsv {
 
                     datos[3] = String.valueOf(nuevaCantidadRecibida);
                     lineas.set(i, String.join(",", datos));
-                    modificado = true;
-                    break;
+                    return guardarLineasEnArchivo(lineas);
                 }
             }
         }
 
-        // Como hay múltiples filas con el mismo ID de Orden, no podemos usar reemplazarLinea.
-        // Reescribimos el archivo completo con el cambio.
-        if (modificado) {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta))) {
-                for (String l : lineas) {
-                    bw.write(l);
-                    bw.newLine();
-                }
-                return true;
-            } catch (IOException e) {
-                System.err.println("Error al actualizar DetallesOrden.csv");
-                return false;
-            }
-        }
         return false;
+    }
+
+    private boolean guardarLineasEnArchivo(List<String> lineas) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta))) {
+            for (String l : lineas) {
+                bw.write(l);
+                bw.newLine();
+            }
+            return true;
+        } catch (IOException e) {
+            System.err.println("Error al actualizar DetallesOrden.csv");
+            return false;
+        }
     }
 }
