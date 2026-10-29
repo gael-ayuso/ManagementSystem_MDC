@@ -13,25 +13,33 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Pruebas unitarias para DA-04 - Move Method.
+ *
+ * Verifica la lógica movida desde GerenteReporteController
+ * hacia ReporteService, incluyendo filtrado por fechas,
+ * exclusión de ventas canceladas, filtrado por categoría,
+ * cálculo de utilidad, producto más vendido y mejor categoría.
+ */
 public class TestReporteCalculo {
 
     private ReporteService reporteService;
-
-    private Producto cemento;
-    private Producto cal;
-    private Producto pintura;
 
     private List<Venta> ventasPrueba;
     private Map<Integer, List<DetalleVenta>> detallesPorVenta;
     private Map<String, Producto> productosPorId;
 
+    /**
+     * Prepara los datos necesarios antes de cada prueba.
+     * Se crean productos, ventas y detalles con diferentes fechas,
+     * estados y categorías para validar la lógica de ReporteService.
+     */
     @BeforeEach
     void setUp() {
 
-        reporteService =
-                new ReporteService();
+        reporteService = new ReporteService();
 
-        cemento = new Producto(
+        Producto cemento = new Producto(
                 "M001",
                 "Cemento Tolteca",
                 "Tolteca",
@@ -43,7 +51,7 @@ public class TestReporteCalculo {
                 0.0
         );
 
-        cal = new Producto(
+        Producto cal = new Producto(
                 "M002",
                 "Cal Hidratada",
                 "Tolteca",
@@ -55,7 +63,7 @@ public class TestReporteCalculo {
                 0.0
         );
 
-        pintura = new Producto(
+        Producto pintura = new Producto(
                 "M003",
                 "Pintura Vinílica",
                 "Comex",
@@ -67,32 +75,17 @@ public class TestReporteCalculo {
                 0.0
         );
 
-        productosPorId =
-                new HashMap<>();
+        productosPorId = new HashMap<>();
 
-        productosPorId.put(
-                "M001",
-                cemento
-        );
+        productosPorId.put("M001", cemento);
+        productosPorId.put("M002", cal);
+        productosPorId.put("M003", pintura);
 
-        productosPorId.put(
-                "M002",
-                cal
-        );
-
-        productosPorId.put(
-                "M003",
-                pintura
-        );
-
-        ventasPrueba =
-                new ArrayList<>();
-
-        detallesPorVenta =
-                new HashMap<>();
+        ventasPrueba = new ArrayList<>();
+        detallesPorVenta = new HashMap<>();
 
 
-        // Venta 1
+        // Venta 1: completada y dentro del rango de mayo.
         Venta v1 = new Venta(
                 1,
                 1,
@@ -104,52 +97,42 @@ public class TestReporteCalculo {
         );
 
         v1.setIdVenta(1);
-
-        v1.setFechaHora(
-                "2026-05-10 10:00:00"
-        );
-
-        v1.setEstado(
-                "COMPLETADA"
-        );
+        v1.setFechaHora("2026-05-10 10:00:00");
+        v1.setEstado("COMPLETADA");
 
         ventasPrueba.add(v1);
 
-        List<DetalleVenta> d1 =
-                List.of(
+        List<DetalleVenta> d1 = List.of(
 
-                        new DetalleVenta(
-                                1,
-                                1,
-                                "M001",
-                                "Cemento Tolteca",
-                                2,
-                                200.0,
-                                0.0,
-                                400.0,
-                                400.0
-                        ),
+                new DetalleVenta(
+                        1,
+                        1,
+                        "M001",
+                        "Cemento Tolteca",
+                        2,
+                        200.0,
+                        0.0,
+                        400.0,
+                        400.0
+                ),
 
-                        new DetalleVenta(
-                                2,
-                                1,
-                                "M003",
-                                "Pintura Vinílica",
-                                1,
-                                500.0,
-                                0.0,
-                                500.0,
-                                500.0
-                        )
-                );
-
-        detallesPorVenta.put(
-                1,
-                d1
+                new DetalleVenta(
+                        2,
+                        1,
+                        "M003",
+                        "Pintura Vinílica",
+                        1,
+                        500.0,
+                        0.0,
+                        500.0,
+                        500.0
+                )
         );
 
+        detallesPorVenta.put(1, d1);
 
-        // Venta 2
+
+        // Venta 2: completada y dentro del rango de mayo.
         Venta v2 = new Venta(
                 2,
                 1,
@@ -161,52 +144,42 @@ public class TestReporteCalculo {
         );
 
         v2.setIdVenta(2);
-
-        v2.setFechaHora(
-                "2026-05-15 14:00:00"
-        );
-
-        v2.setEstado(
-                "COMPLETADA"
-        );
+        v2.setFechaHora("2026-05-15 14:00:00");
+        v2.setEstado("COMPLETADA");
 
         ventasPrueba.add(v2);
 
-        List<DetalleVenta> d2 =
-                List.of(
+        List<DetalleVenta> d2 = List.of(
 
-                        new DetalleVenta(
-                                3,
-                                2,
-                                "M001",
-                                "Cemento Tolteca",
-                                3,
-                                200.0,
-                                0.0,
-                                600.0,
-                                600.0
-                        ),
+                new DetalleVenta(
+                        3,
+                        2,
+                        "M001",
+                        "Cemento Tolteca",
+                        3,
+                        200.0,
+                        0.0,
+                        600.0,
+                        600.0
+                ),
 
-                        new DetalleVenta(
-                                4,
-                                2,
-                                "M002",
-                                "Cal Hidratada",
-                                2,
-                                100.0,
-                                0.0,
-                                200.0,
-                                200.0
-                        )
-                );
-
-        detallesPorVenta.put(
-                2,
-                d2
+                new DetalleVenta(
+                        4,
+                        2,
+                        "M002",
+                        "Cal Hidratada",
+                        2,
+                        100.0,
+                        0.0,
+                        200.0,
+                        200.0
+                )
         );
 
+        detallesPorVenta.put(2, d2);
 
-        // Venta 3 CANCELADA
+
+        // Venta 3: cancelada, no debe considerarse en los cálculos.
         Venta v3 = new Venta(
                 3,
                 1,
@@ -218,40 +191,30 @@ public class TestReporteCalculo {
         );
 
         v3.setIdVenta(3);
-
-        v3.setFechaHora(
-                "2026-05-12 12:00:00"
-        );
-
-        v3.setEstado(
-                "CANCELADA"
-        );
+        v3.setFechaHora("2026-05-12 12:00:00");
+        v3.setEstado("CANCELADA");
 
         ventasPrueba.add(v3);
 
-        List<DetalleVenta> d3 =
-                List.of(
+        List<DetalleVenta> d3 = List.of(
 
-                        new DetalleVenta(
-                                5,
-                                3,
-                                "M003",
-                                "Pintura Vinílica",
-                                2,
-                                500.0,
-                                0.0,
-                                1000.0,
-                                1000.0
-                        )
-                );
-
-        detallesPorVenta.put(
-                3,
-                d3
+                new DetalleVenta(
+                        5,
+                        3,
+                        "M003",
+                        "Pintura Vinílica",
+                        2,
+                        500.0,
+                        0.0,
+                        1000.0,
+                        1000.0
+                )
         );
 
+        detallesPorVenta.put(3, d3);
 
-        // Venta 4 fuera de rango
+
+        // Venta 4: completada pero fuera del rango de mayo.
         Venta v4 = new Venta(
                 4,
                 1,
@@ -263,55 +226,38 @@ public class TestReporteCalculo {
         );
 
         v4.setIdVenta(4);
-
-        v4.setFechaHora(
-                "2026-06-01 10:00:00"
-        );
-
-        v4.setEstado(
-                "COMPLETADA"
-        );
+        v4.setFechaHora("2026-06-01 10:00:00");
+        v4.setEstado("COMPLETADA");
 
         ventasPrueba.add(v4);
 
-        List<DetalleVenta> d4 =
-                List.of(
+        List<DetalleVenta> d4 = List.of(
 
-                        new DetalleVenta(
-                                6,
-                                4,
-                                "M001",
-                                "Cemento Tolteca",
-                                2,
-                                200.0,
-                                0.0,
-                                400.0,
-                                400.0
-                        )
-                );
-
-        detallesPorVenta.put(
-                4,
-                d4
+                new DetalleVenta(
+                        6,
+                        4,
+                        "M001",
+                        "Cemento Tolteca",
+                        2,
+                        200.0,
+                        0.0,
+                        400.0,
+                        400.0
+                )
         );
+
+        detallesPorVenta.put(4, d4);
     }
 
+
+    // DA-04 - Move Method:
+    // Verifica que el servicio filtre correctamente las ventas
+    // de acuerdo con el rango de fechas indicado.
     @Test
     void testFiltradoPorRangoFechas() {
 
-        LocalDate inicio =
-                LocalDate.of(
-                        2026,
-                        5,
-                        1
-                );
-
-        LocalDate fin =
-                LocalDate.of(
-                        2026,
-                        5,
-                        31
-                );
+        LocalDate inicio = LocalDate.of(2026, 5, 1);
+        LocalDate fin = LocalDate.of(2026, 5, 31);
 
         reporteService.procesarReporte(
                 inicio,
@@ -337,22 +283,15 @@ public class TestReporteCalculo {
         );
     }
 
+
+    // DA-04 - Move Method:
+    // Verifica que las ventas con estado CANCELADA
+    // no sean consideradas en los cálculos del reporte.
     @Test
     void testExclusionVentasCanceladas() {
 
-        LocalDate inicio =
-                LocalDate.of(
-                        2026,
-                        5,
-                        12
-                );
-
-        LocalDate fin =
-                LocalDate.of(
-                        2026,
-                        5,
-                        12
-                );
+        LocalDate inicio = LocalDate.of(2026, 5, 12);
+        LocalDate fin = LocalDate.of(2026, 5, 12);
 
         reporteService.procesarReporte(
                 inicio,
@@ -390,22 +329,15 @@ public class TestReporteCalculo {
         );
     }
 
+
+    // DA-04 - Move Method:
+    // Verifica que el filtro por categoría solo considere
+    // los productos pertenecientes a la categoría seleccionada.
     @Test
     void testFiltradoPorCategoria() {
 
-        LocalDate inicio =
-                LocalDate.of(
-                        2026,
-                        5,
-                        1
-                );
-
-        LocalDate fin =
-                LocalDate.of(
-                        2026,
-                        5,
-                        31
-                );
+        LocalDate inicio = LocalDate.of(2026, 5, 1);
+        LocalDate fin = LocalDate.of(2026, 5, 31);
 
         reporteService.procesarReporte(
                 inicio,
@@ -436,22 +368,15 @@ public class TestReporteCalculo {
         );
     }
 
+
+    // DA-04 - Move Method:
+    // Verifica el cálculo del producto más vendido
+    // y de la categoría con mayores ingresos.
     @Test
     void testCalculoProductoMasVendidoYMejorCategoria() {
 
-        LocalDate inicio =
-                LocalDate.of(
-                        2026,
-                        5,
-                        1
-                );
-
-        LocalDate fin =
-                LocalDate.of(
-                        2026,
-                        5,
-                        31
-                );
+        LocalDate inicio = LocalDate.of(2026, 5, 1);
+        LocalDate fin = LocalDate.of(2026, 5, 31);
 
         reporteService.procesarReporte(
                 inicio,
@@ -475,22 +400,15 @@ public class TestReporteCalculo {
         );
     }
 
+
+    // DA-04 - Move Method:
+    // Verifica los valores por defecto cuando no existen
+    // ventas dentro del periodo seleccionado.
     @Test
     void testSinDatosRetornaValoresPorDefecto() {
 
-        LocalDate inicio =
-                LocalDate.of(
-                        2025,
-                        1,
-                        1
-                );
-
-        LocalDate fin =
-                LocalDate.of(
-                        2025,
-                        1,
-                        31
-                );
+        LocalDate inicio = LocalDate.of(2025, 1, 1);
+        LocalDate fin = LocalDate.of(2025, 1, 31);
 
         reporteService.procesarReporte(
                 inicio,
