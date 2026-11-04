@@ -3,8 +3,6 @@ package model;
 import gestionmats.model.DetalleVenta;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Method;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -36,16 +34,8 @@ public class TestDetalleVenta {
     @Test
     void testRecalculoAgregarCantidadSinDescuento() {
         DetalleVenta item = new DetalleVenta(1, "M001", "Cemento Tolteca", 2, 100.0, 0.0);
-        int extra = 3;
 
-        // Comprobar si ya existe el método refactorizado agregarCantidad(int)
-        boolean metodoInvocado = invocarAgregarCantidadSiExiste(item, extra);
-        if (!metodoInvocado) {
-            // Lógica pre-refactorización ejecutada por el controlador
-            item.setCantidad(item.getCantidad() + extra);
-            item.setSubtotal(item.getPrecioUnitario() * item.getCantidad());
-            item.setTotal(item.getSubtotal() * (1 - item.getDescuentoAplicado() / 100));
-        }
+        item.agregarCantidad(3);
 
         assertEquals(5, item.getCantidad());
         assertEquals(500.0, item.getSubtotal(), 0.001);
@@ -61,14 +51,8 @@ public class TestDetalleVenta {
     @Test
     void testRecalculoAgregarCantidadConDescuento() {
         DetalleVenta item = new DetalleVenta(1, "M001", "Cemento Tolteca", 2, 100.0, 10.0);
-        int extra = 3;
 
-        boolean metodoInvocado = invocarAgregarCantidadSiExiste(item, extra);
-        if (!metodoInvocado) {
-            item.setCantidad(item.getCantidad() + extra);
-            item.setSubtotal(item.getPrecioUnitario() * item.getCantidad());
-            item.setTotal(item.getSubtotal() * (1 - item.getDescuentoAplicado() / 100));
-        }
+        item.agregarCantidad(3);
 
         assertEquals(5, item.getCantidad());
         assertEquals(500.0, item.getSubtotal(), 0.001);
@@ -77,15 +61,5 @@ public class TestDetalleVenta {
         DetalleVenta nuevoEsperado = new DetalleVenta(1, "M001", "Cemento Tolteca", 5, 100.0, 10.0);
         assertEquals(nuevoEsperado.getSubtotal(), item.getSubtotal(), 0.001);
         assertEquals(nuevoEsperado.getTotal(), item.getTotal(), 0.001);
-    }
-
-    private boolean invocarAgregarCantidadSiExiste(DetalleVenta item, int extra) {
-        try {
-            Method m = DetalleVenta.class.getMethod("agregarCantidad", int.class);
-            m.invoke(item, extra);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
     }
 }

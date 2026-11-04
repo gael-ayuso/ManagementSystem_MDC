@@ -112,26 +112,19 @@ public class LoginController implements Initializable {
             RolUsuario rol = GestorSesion.getInstancia().getRolActual();
 
             // 3. Redirigimos según el rol
-            switch (rol) {
-                case GERENTE:
-                    cargarVistaUsuario("/views/gerente/GerenteView.fxml", "SDG MDC - Panel de Gerente");
-                    break;
-                case VENDEDOR:
-                    cargarVistaUsuario("/views/VendedorView.fxml", "SDG MDC - Punto de Venta");
-                    break;
-                case ALMACENISTA:
-                    cargarVistaUsuario("/views/almacenista/AlmacenistaView.fxml", "SDG MDC - Control de Almacén");
-                    break;
-                default:
-                    AlertUtils.mostrarAlerta(Alert.AlertType.ERROR, "Error de Acceso", "Rol no reconocido", "Consulte con soporte.");
-                    break;
+            // Replace Conditional with Polymorphism: el switch (rol) se eliminó; cada RolUsuario
+            // ya conoce su vista y su título (getVista() / getTitulo()).
+            // El if conserva la alerta del antiguo "default" y evita un error si el rol llega null.
+            if (rol == null) {
+                AlertUtils.mostrarAlerta(Alert.AlertType.ERROR, "Error de Acceso", "Rol no reconocido", "Consulte con soporte.");
+                return;
             }
+            cargarVistaUsuario(rol.getVista(), rol.getTitulo());
         } else {
             // Animación de error si falla el login
             shakeNode(txtUser);
             shakeNode(txtPasswordVisible.isVisible() ? txtPasswordVisible : txtPasswordHidden);
 
-            // Opcional: mostrar la etiqueta de error si tienes una (ej. lblError.setVisible(true))
             if (errorBox != null) {
                 errorBox.setVisible(true);
                 errorBox.setManaged(true);
@@ -150,10 +143,7 @@ public class LoginController implements Initializable {
         node.setStyle("-fx-border-color: #e74c3c;");
         tt.setOnFinished(e -> node.setStyle("")); // Limpia el estilo al terminar
     }
-    /**
-     * MÉTODO UNIVERSAL (DRY)
-     * Carga cualquier vista pasándole la ruta del archivo FXML y el título de la ventana.
-     */
+
     private void cargarVistaUsuario(String rutaFxml, String tituloVentana) {
         try {
             URL vistaUrl = getClass().getResource(rutaFxml);
