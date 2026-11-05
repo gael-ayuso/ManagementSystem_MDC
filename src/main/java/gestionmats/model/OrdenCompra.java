@@ -1,5 +1,6 @@
 package gestionmats.model;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class OrdenCompra {
     public Date getFechaEmision() { return fechaEmision; }
     public String getEstado() { return estado; }
     public Proveedor getProveedor() { return proveedor; }
-    public List<DetalleOrden> getDetalles() { return detalles; }
+    public List<DetalleOrden> getDetalles() { return Collections.unmodifiableList(this.detalles); }
 
     // --- SETTERS ---
     public void setIdOrden(int idOrden) { this.idOrden = idOrden; }
@@ -50,5 +51,12 @@ public class OrdenCompra {
         if (detalle != null) {
             this.detalles.add(detalle);
         }
+    }
+
+    public boolean removerDetalleOrden(DetalleOrden detalle) {
+        if (detalle != null) {
+            return this.detalles.remove(detalle);
+        }
+        return false;
     }
 }
