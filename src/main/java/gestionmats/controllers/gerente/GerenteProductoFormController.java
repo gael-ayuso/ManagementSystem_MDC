@@ -64,57 +64,144 @@ public class GerenteProductoFormController implements Initializable {
         btnGuardar.setText("Actualizar Material");
     }
 
-    @FXML private void handleGuardar() {
-        if (txtNombre.getText().trim().isEmpty() || txtMarca.getText().trim().isEmpty() ||
-                txtUnidad.getText().trim().isEmpty() || txtPrecio.getText().trim().isEmpty() ||
-                txtStockActual.getText().trim().isEmpty() || txtStockMaximo.getText().trim().isEmpty()) {
-            UIComponents.showNotification("Complete todos los campos obligatorios.", "warn");
+    @FXML
+    private void handleGuardar() {
+
+        if (hayCamposObligatoriosVacios()) {
+            UIComponents.showNotification(
+                    "Complete todos los campos obligatorios.",
+                    "warn"
+            );
             return;
         }
 
-        // Validar duplicados SOLO si estamos creando un producto nuevo,
-        // o si estamos editando pero le cambiamos el nombre.
-        boolean nombreModificado = (productoEdicion == null) || !productoEdicion.getNombre().equalsIgnoreCase(txtNombre.getText().trim());
-
-        if (nombreModificado && dao.existeProductoPorNombreExacto(txtNombre.getText())) {
-            UIComponents.showNotification("Ya existe un material registrado con ese nombre.", "error");
+        if (nombreProductoDuplicado()) {
+            UIComponents.showNotification(
+                    "Ya existe un material registrado con ese nombre.",
+                    "error"
+            );
             return;
         }
 
         try {
             double precio = Double.parseDouble(txtPrecio.getText().trim());
-            double descuento = txtDescuento.getText().trim().isEmpty() ? 0.0 : Double.parseDouble(txtDescuento.getText().trim());
+
+            double descuento = txtDescuento.getText().trim().isEmpty()
+                    ? 0.0
+                    : Double.parseDouble(txtDescuento.getText().trim());
+
             int stockActual = Integer.parseInt(txtStockActual.getText().trim());
             int stockMax = Integer.parseInt(txtStockMaximo.getText().trim());
 
-            if (stockActual > stockMax) {
-                UIComponents.showNotification("El stock actual no puede ser mayor al stock máximo.", "warn");
+            if (stockEsInvalido(stockActual, stockMax)) {
+                UIComponents.showNotification(
+                        "El stock actual no puede ser mayor al stock máximo.",
+                        "warn"
+                );
                 return;
             }
 
             Producto productoProcesado = new Producto(
-                    txtId.getText(), txtNombre.getText().trim(), txtMarca.getText().trim(),
-                    cmbCategoria.getValue(), precio, stockMax, stockActual, txtUnidad.getText().trim(), descuento
+                    txtId.getText(),
+                    txtNombre.getText().trim(),
+                    txtMarca.getText().trim(),
+                    cmbCategoria.getValue(),
+                    precio,
+                    stockMax,
+                    stockActual,
+                    txtUnidad.getText().trim(),
+                    descuento
             );
 
             boolean exito;
+
             if (productoEdicion == null) {
-                exito = dao.guardar(productoProcesado); // CREAR
+                exito = dao.guardar(productoProcesado);
             } else {
-                exito = dao.actualizar(productoProcesado); // EDITAR
+                exito = dao.actualizar(productoProcesado);
             }
 
             if (exito) {
                 guardadoExitoso = true;
                 cerrarVentana();
             } else {
-                UIComponents.showNotification("Error al escribir en la base de datos.", "error");
+                UIComponents.showNotification(
+                        "Error al escribir en la base de datos.",
+                        "error"
+                );
             }
 
         } catch (NumberFormatException e) {
-            UIComponents.showNotification("Revise que el precio y los stocks sean números válidos.", "error");
+            UIComponents.showNotification(
+                    "Revise que el precio y los stocks sean números válidos.",
+                    "error"
+            );
         }
     }
+
+    // Métodos Decompose Conditional
+
+    private boolean hayCamposObligatoriosVacios() {
+        return hayCamposObligatoriosVacios(
+                txtNombre.getText(),
+                txtMarca.getText(),
+                txtUnidad.getText(),
+                txtPrecio.getText(),
+                txtStockActual.getText(),
+                txtStockMaximo.getText()
+        );
+    }
+
+    public boolean hayCamposObligatoriosVacios(
+            String nombre,
+            String marca,
+            String unidad,
+            String precio,
+            String stockActual,
+            String stockMaximo) {
+
+        return nombre == null || nombre.trim().isEmpty()
+                || marca == null || marca.trim().isEmpty()
+                || unidad == null || unidad.trim().isEmpty()
+                || precio == null || precio.trim().isEmpty()
+                || stockActual == null || stockActual.trim().isEmpty()
+                || stockMaximo == null || stockMaximo.trim().isEmpty();
+    }
+
+
+    private boolean nombreProductoDuplicado() {
+        boolean existeEnDao =
+                dao.existeProductoPorNombreExacto(txtNombre.getText());
+
+        return nombreProductoDuplicado(
+                productoEdicion,
+                txtNombre.getText(),
+                existeEnDao
+        );
+    }
+
+    public boolean nombreProductoDuplicado(
+            Producto productoEdicion,
+            String nuevoNombre,
+            boolean existeEnDao) {
+
+        if (nuevoNombre == null) {
+            return false;
+        }
+
+        boolean nombreModificado =
+                productoEdicion == null
+                        || !productoEdicion.getNombre()
+                        .equalsIgnoreCase(nuevoNombre.trim());
+
+        return nombreModificado && existeEnDao;
+    }
+
+
+    public boolean stockEsInvalido(int stockActual, int stockMax) {
+        return stockActual > stockMax;
+    }
+
 
     @FXML private void handleCancelar() { cerrarVentana(); }
     private void cerrarVentana() { ((Stage) btnCancelar.getScene().getWindow()).close(); }
