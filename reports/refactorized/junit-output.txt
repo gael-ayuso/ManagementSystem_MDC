@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.gestionmats:SDG_MDC >-----------------------
+[INFO] Building SDG_MDC 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] 6 problems were encountered while building the effective model for org.openjfx:javafx-controls:jar:17.0.6 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ SDG_MDC ---
+[INFO] Deleting C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ SDG_MDC ---
+[INFO] Copying 28 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ SDG_MDC ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 63 source files with javac [debug target 17 module-path] to target\classes
+[WARNING] system modules path not set in conjunction with -source 17
+[INFO] /C:/Users/goods/.traycer/epics/79c1dfde-7389-4ff7-8b96-60acba1ad241/scratch/junit-branches-20261106/refactorized/src/main/java/gestionmats/controllers/VendedorController.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/goods/.traycer/epics/79c1dfde-7389-4ff7-8b96-60acba1ad241/scratch/junit-branches-20261106/refactorized/src/main/java/gestionmats/controllers/VendedorController.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/goods/.traycer/epics/79c1dfde-7389-4ff7-8b96-60acba1ad241/scratch/junit-branches-20261106/refactorized/src/main/java/gestionmats/controllers/VendedorController.java: Some input files use unchecked or unsafe operations.
+[INFO] /C:/Users/goods/.traycer/epics/79c1dfde-7389-4ff7-8b96-60acba1ad241/scratch/junit-branches-20261106/refactorized/src/main/java/gestionmats/controllers/VendedorController.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ SDG_MDC ---
+[INFO] skip non existing resourceDirectory C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ SDG_MDC ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 14 source files with javac [debug target 17 module-path] to target\test-classes
+[WARNING] system modules path not set in conjunction with -source 17
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ SDG_MDC ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running controllers.TestGerenteClienteFiltro
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s -- in controllers.TestGerenteClienteFiltro
+[INFO] Running controllers.TestGerenteProductoFormValidation
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in controllers.TestGerenteProductoFormValidation
+[INFO] Running controllers.TestReporteCalculo
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in controllers.TestReporteCalculo
+[INFO] Running controllers.TestRolUsuario
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in controllers.TestRolUsuario
+[INFO] Running controllers.TestVendedorVenta
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in controllers.TestVendedorVenta
+[INFO] Running dao.TestClienteDaoCSV
+Error al parsear cliente: ID_INVALIDO,Cliente Malformado,correo@mail.com,555-0000,Calle X,PUNTOS_INVALIDOS,Pref
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in dao.TestClienteDaoCSV
+[INFO] Running dao.TestDetalleOrdenConstantesCsv
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in dao.TestDetalleOrdenConstantesCsv
+[INFO] Running dao.TestDetalleOrdenDaoCsv
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in dao.TestDetalleOrdenDaoCsv
+[INFO] Running dao.TestOrdenCompraDaoCsv
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 s -- in dao.TestOrdenCompraDaoCsv
+[INFO] Running model.TestCliente
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in model.TestCliente
+[INFO] Running model.TestDetalleOrden
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in model.TestDetalleOrden
+[INFO] Running model.TestDetalleVenta
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in model.TestDetalleVenta
+[INFO] Running model.TestOrdenCompra
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in model.TestOrdenCompra
+[INFO] Running model.TestProducto
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in model.TestProducto
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 60, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.318 s
+[INFO] Finished at: 2026-11-06T19:57:32-06:00
+[INFO] ------------------------------------------------------------------------

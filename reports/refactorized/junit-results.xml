@@ -1,0 +1,932 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="refactorized" tests="60" failures="0" errors="0" skipped="0" time="0.444">
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="controllers.TestGerenteClienteFiltro" time="0.099" tests="6" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testClientesValidosVisiblesSinFiltro" classname="controllers.TestGerenteClienteFiltro" time="0.057" />
+    <testcase name="testClienteIdCeroOcultadoSinFiltro" classname="controllers.TestGerenteClienteFiltro" time="0.011" />
+    <testcase name="testClienteIdCeroOcultadoConBusquedaCoincidente" classname="controllers.TestGerenteClienteFiltro" time="0.0" />
+    <testcase name="testFiltroPorTelefono" classname="controllers.TestGerenteClienteFiltro" time="0.001" />
+    <testcase name="testFiltroPorNombre" classname="controllers.TestGerenteClienteFiltro" time="0.001" />
+    <testcase name="testFiltroSinCoincidencias" classname="controllers.TestGerenteClienteFiltro" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="controllers.TestGerenteProductoFormValidation" time="0.018" tests="6" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testFormatoNumericoInvalido" classname="controllers.TestGerenteProductoFormValidation" time="0.008" />
+    <testcase name="testNombreDuplicadoEnEdicionCambioANombreExistente" classname="controllers.TestGerenteProductoFormValidation" time="0.0" />
+    <testcase name="testCamposObligatoriosVacios" classname="controllers.TestGerenteProductoFormValidation" time="0.005" />
+    <testcase name="testNombreDuplicadoEnCreacion" classname="controllers.TestGerenteProductoFormValidation" time="0.002" />
+    <testcase name="testValidacionStockInvalido" classname="controllers.TestGerenteProductoFormValidation" time="0.0" />
+    <testcase name="testNombreDuplicadoEnEdicionMismoNombre" classname="controllers.TestGerenteProductoFormValidation" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="controllers.TestReporteCalculo" time="0.059" tests="5" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testExclusionVentasCanceladas" classname="controllers.TestReporteCalculo" time="0.035" />
+    <testcase name="testSinDatosRetornaValoresPorDefecto" classname="controllers.TestReporteCalculo" time="0.0" />
+    <testcase name="testCalculoProductoMasVendidoYMejorCategoria" classname="controllers.TestReporteCalculo" time="0.001" />
+    <testcase name="testFiltradoPorRangoFechas" classname="controllers.TestReporteCalculo" time="0.0" />
+    <testcase name="testFiltradoPorCategoria" classname="controllers.TestReporteCalculo" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="controllers.TestRolUsuario" time="0.017" tests="3" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testRecursosFxmlExistenEnClasspath" classname="controllers.TestRolUsuario" time="0.008" />
+    <testcase name="testValueOfRoles" classname="controllers.TestRolUsuario" time="0.0" />
+    <testcase name="testMapeoVistasYTitulosPorRol" classname="controllers.TestRolUsuario" time="0.006" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="controllers.TestVendedorVenta" time="0.009" tests="5" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testCalcularPuntosLimiteInferiorCero" classname="controllers.TestVendedorVenta" time="0.0" />
+    <testcase name="testConstruccionObjetoVenta" classname="controllers.TestVendedorVenta" time="0.0" />
+    <testcase name="testActualizacionPuntosEnCliente" classname="controllers.TestVendedorVenta" time="0.001" />
+    <testcase name="testCalcularPuntosConCanje" classname="controllers.TestVendedorVenta" time="0.002" />
+    <testcase name="testCalcularPuntosSinCanje" classname="controllers.TestVendedorVenta" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="dao.TestClienteDaoCSV" time="0.032" tests="4" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testClienteConCamposVaciosAplicaValoresPorDefecto" classname="dao.TestClienteDaoCSV" time="0.011" />
+    <testcase name="testListarTodosNoVacioYOmitirCabecera" classname="dao.TestClienteDaoCSV" time="0.007" />
+    <testcase name="testMapeoAtributosClienteRegistrado" classname="dao.TestClienteDaoCSV" time="0.005" />
+    <testcase name="testLineaCorruptaEsIgnoradaSinDetenerLectura" classname="dao.TestClienteDaoCSV" time="0.007">
+      <system-err><![CDATA[Error al parsear cliente: ID_INVALIDO,Cliente Malformado,correo@mail.com,555-0000,Calle X,PUNTOS_INVALIDOS,Pref
+]]></system-err>
+    </testcase>
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="dao.TestDetalleOrdenConstantesCsv" time="0.034" tests="3" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testPosicionesColumnasAlGuardarYActualizar" classname="dao.TestDetalleOrdenConstantesCsv" time="0.022" />
+    <testcase name="testFiltradoPorColumnaIdOrdenInexistente" classname="dao.TestDetalleOrdenConstantesCsv" time="0.004" />
+    <testcase name="testMapeoDeColumnasEnBuscarPorIdOrden" classname="dao.TestDetalleOrdenConstantesCsv" time="0.005" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="dao.TestDetalleOrdenDaoCsv" time="0.022" tests="3" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testActualizarRecepcionProductoInexistenteRetornaFalse" classname="dao.TestDetalleOrdenDaoCsv" time="0.009" />
+    <testcase name="testActualizarRecepcionExitosoRetornaTrue" classname="dao.TestDetalleOrdenDaoCsv" time="0.008" />
+    <testcase name="testActualizarRecepcionOrdenInexistenteRetornaFalse" classname="dao.TestDetalleOrdenDaoCsv" time="0.004" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="dao.TestOrdenCompraDaoCsv" time="0.112" tests="3" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testGuardarOrdenYDetalles" classname="dao.TestOrdenCompraDaoCsv" time="0.081" />
+    <testcase name="testListarTodosYCargarDetalles" classname="dao.TestOrdenCompraDaoCsv" time="0.01" />
+    <testcase name="testBuscarPorIdCargaDetallesDeLaOrden" classname="dao.TestOrdenCompraDaoCsv" time="0.018" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="model.TestCliente" time="0.006" tests="4" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testAcumularPuntosVentaPositiva" classname="model.TestCliente" time="0.002" />
+    <testcase name="testAplicarPuntosConSaldoCero" classname="model.TestCliente" time="0.0" />
+    <testcase name="testAplicarPuntosComoDescuento" classname="model.TestCliente" time="0.004" />
+    <testcase name="testAcumularPuntosMontoCeroONegativo" classname="model.TestCliente" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="model.TestDetalleOrden" time="0.008" tests="4" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testCalcularSubtotalConProductoNull" classname="model.TestDetalleOrden" time="0.004" />
+    <testcase name="testCalcularSubtotalConCantidadCero" classname="model.TestDetalleOrden" time="0.001" />
+    <testcase name="testConstructoresYGettersSetters" classname="model.TestDetalleOrden" time="0.002" />
+    <testcase name="testCalcularSubtotalConProductoValido" classname="model.TestDetalleOrden" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="model.TestDetalleVenta" time="0.007" tests="4" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testRecalculoAgregarCantidadSinDescuento" classname="model.TestDetalleVenta" time="0.002" />
+    <testcase name="testRecalculoAgregarCantidadConDescuento" classname="model.TestDetalleVenta" time="0.0" />
+    <testcase name="testCalculoSubtotalYTotalSinDescuento" classname="model.TestDetalleVenta" time="0.0" />
+    <testcase name="testCalculoSubtotalYTotalConDescuento" classname="model.TestDetalleVenta" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="model.TestOrdenCompra" time="0.006" tests="5" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testConstructorParametrizado" classname="model.TestOrdenCompra" time="0.0" />
+    <testcase name="testAddDetalleOrden" classname="model.TestOrdenCompra" time="0.0" />
+    <testcase name="testInicializacionOrdenCompra" classname="model.TestOrdenCompra" time="0.0" />
+    <testcase name="testAddDetalleOrdenNullIgnorado" classname="model.TestOrdenCompra" time="0.001" />
+    <testcase name="testMultiplesDetallesOrden" classname="model.TestOrdenCompra" time="0.0" />
+  </testsuite>
+  <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="model.TestProducto" time="0.015" tests="5" errors="0" skipped="0" failures="0" flakes="0">
+    <properties>
+      <property name="java.specification.version" value="21" />
+      <property name="sun.cpu.isalist" value="amd64" />
+      <property name="sun.jnu.encoding" value="Cp1252" />
+      <property name="java.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="java.vm.vendor" value="Oracle Corporation" />
+      <property name="sun.arch.data.model" value="64" />
+      <property name="user.variant" value="" />
+      <property name="java.vendor.url" value="https://java.oracle.com/" />
+      <property name="user.timezone" value="America/Mexico_City" />
+      <property name="os.name" value="Windows 11" />
+      <property name="java.vm.specification.version" value="21" />
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+      <property name="user.country" value="MX" />
+      <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin" />
+      <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\goods\AppData\Local\Temp\surefire1744944221676082915 2026-11-06T19-57-29_738-jvmRun1 surefire-20261106195730302_1tmp surefire_0-20261106195730302_2tmp" />
+      <property name="jdk.debug" value="release" />
+      <property name="surefire.test.class.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;" />
+      <property name="sun.cpu.endian" value="little" />
+      <property name="user.home" value="C:\Users\goods" />
+      <property name="user.language" value="es" />
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+      <property name="jdk.module.path" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6-win.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6-win.jar" />
+      <property name="java.version.date" value="2026-01-20" />
+      <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10" />
+      <property name="file.separator" value="\" />
+      <property name="basedir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="style.color" value="never" />
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+      <property name="line.separator" value="&#xA;" />
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+      <property name="java.specification.name" value="Java Platform API Specification" />
+      <property name="surefire.real.class.path" value="C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.6\surefire-booter-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.6\surefire-api-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.6\surefire-extensions-spi-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.6\surefire-shared-utils-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.6\surefire-logger-api-3.5.6.jar;C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized\target\test-classes;C:\Users\goods\.m2\repository\org\openjfx\javafx-controls\17.0.6\javafx-controls-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-graphics\17.0.6\javafx-graphics-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-base\17.0.6\javafx-base-17.0.6.jar;C:\Users\goods\.m2\repository\org\openjfx\javafx-fxml\17.0.6\javafx-fxml-17.0.6.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\goods\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\goods\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\goods\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.5.6\surefire-junit-platform-3.5.6.jar;C:\Users\goods\.m2\repository\org\apache\maven\surefire\common-java5\3.5.6\common-java5-3.5.6.jar;C:\Users\goods\.m2\repository\org\junit\platform\junit-platform-launcher\6.1.3\junit-platform-launcher-6.1.3.jar" />
+      <property name="user.script" value="" />
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+      <property name="java.runtime.version" value="21.0.10+8-LTS-217" />
+      <property name="user.name" value="SYSTEM" />
+      <property name="stdout.encoding" value="Cp1252" />
+      <property name="path.separator" value=";" />
+      <property name="os.version" value="10.0" />
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+      <property name="file.encoding" value="UTF-8" />
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+      <property name="localRepository" value="C:\Users\goods\.m2\repository" />
+      <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+      <property name="java.io.tmpdir" value="C:\Users\goods\AppData\Local\Temp\" />
+      <property name="java.version" value="21.0.10" />
+      <property name="user.dir" value="C:\Users\goods\.traycer\epics\79c1dfde-7389-4ff7-8b96-60acba1ad241\scratch\junit-branches-20261106\refactorized" />
+      <property name="os.arch" value="amd64" />
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+      <property name="sun.os.patch.level" value="" />
+      <property name="native.encoding" value="Cp1252" />
+      <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\goods\.codex\tmp\arg0-windows\codex-arg0Rskmzj;C:\Users\goods\.traycer\cli\bin;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\GitHub CLI\;C:\Users\goods\AppData\Local\hermes\bin;C:\Users\goods\scoop\apps\maven\current\bin;C:\Users\goods\scoop\shims;C:\Users\goods\AppData\Local\agy\bin;C:\Users\goods\.cargo\bin;C:\Users\goods\AppData\Local\Microsoft\WindowsApps;C:\Users\goods\AppData\Local\Programs\Antigravity\bin;C:\Users\goods\AppData\Local\GitHubDesktop\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Links;C:\Users\goods\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\msys64\ucrt64\bin;C:\Users\goods\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\goods\AppData\Local\Python\bin;C:\Users\goods\AppData\Roaming\npm;C:\Users\goods\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\goods\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin;C:\Users\goods\AppData\Local\Programs\Ollama;C:\Users\goods\AppData\Roaming\Python\Python314\Scripts;C:\Users\goods\AppData\Roaming\Composer\vendor\bin;C:\platform-tools;C:\Users\goods\AppData\Local\Programs\DockerDesktop\resources\bin;." />
+      <property name="java.vm.info" value="mixed mode" />
+      <property name="stderr.encoding" value="Cp1252" />
+      <property name="java.vendor" value="Oracle Corporation" />
+      <property name="java.vm.version" value="21.0.10+8-LTS-217" />
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+      <property name="java.class.version" value="65.0" />
+    </properties>
+    <testcase name="testEstadoCritico" classname="model.TestProducto" time="0.003" />
+    <testcase name="testEstadoBajo" classname="model.TestProducto" time="0.003" />
+    <testcase name="testEstadoOk" classname="model.TestProducto" time="0.0" />
+    <testcase name="testCalcularStockMinimo" classname="model.TestProducto" time="0.0" />
+    <testcase name="testEstadoLleno" classname="model.TestProducto" time="0.0" />
+  </testsuite>
+</testsuites>
